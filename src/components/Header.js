@@ -16,6 +16,8 @@ const Header = () => {
   const navigate=useNavigate();
   const user=useSelector(store=>store.user);
 
+  const showGptSearch=useSelector(store=>store.gpt.showGptSearch)
+
    const handleSignOut=()=>{
     signOut(auth).then(() => {
       // Sign-out successful.
@@ -62,14 +64,16 @@ const Header = () => {
         src={LOGO}/>
         {user &&(
         < div className='flex p-2'>
+          {showGptSearch&&(
         <select className='p-2 m-2 bg-gray-900 text-white shadow-white rounded-lg'
         onChange={handleLanguageChange}>
           {SUPPORTED_LANGUAGES.map(lang=><option key={lang.identifier} value={lang.identifier}>
             {lang.name}
             </option>)}
         </select>
+)}
           <button className='py-2 px-4 bg-purple-700 rounded-lg mx-4 my-2 text-white'
-          onClick={handleGptSearchClick}>GPT Search</button>
+          onClick={handleGptSearchClick}>{showGptSearch?"HomePage":"GPT Search"}</button>
           <img className='w-12 h-12'
           alt="user-icon" src={user && user.photoURL}/>
           <button onClick={handleSignOut}

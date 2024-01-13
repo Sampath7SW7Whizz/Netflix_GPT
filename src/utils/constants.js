@@ -3,12 +3,12 @@ export const LOGO="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-89723
 export const USER_AVATAR =
   "https://occ-0-6247-2164.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABdpkabKqQAxyWzo6QW_ZnPz1IZLqlmNfK-t4L1VIeV1DY00JhLo_LMVFp936keDxj-V5UELAVJrU--iUUY2MaDxQSSO-0qw.png?r=e6e";
 
-  export const API_OPTIONS={
-    method: 'GET',
+  export const API_OPTIONS = {
+    method: "GET",
     headers: {
-      accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlMWYyZjM3M2YxMGM5NGE2OTMwMWViNjI3NDhmOTkyZSIsInN1YiI6IjY1OWMxOWZkYTEwNzRiNTc0Mjc5YzgzNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.90C90b6Ayv_mWkc3Fa30pwjZeAaiFoHt5n9F7uffqyQ'
-    }
+      accept: "application/json",
+      Authorization: "Bearer " + process.env.REACT_APP_TMDB_KEY,
+    },
   };
 
   export const IMG_CDN_URL="https://image.tmdb.org/t/p/w500";
@@ -20,3 +20,5 @@ export const USER_AVATAR =
     { identifier: "tamil", name: "Tamil" },
     { identifier: "spanish", name: "Spanish" },
   ];
+
+export const OPENAI_KEY=process.env.REACT_APP_OPENAI_KEY;

@@ -2,7 +2,7 @@ import React from 'react';
 import MovieCard from './MovieCard';
 
 const MovieList = ({ title, movies }) => {
-  console.log(movies);
+ 
 
   // Check if movies is null or empty before accessing its elements
   if (!movies || movies.length === 0) {
